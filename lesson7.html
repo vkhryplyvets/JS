@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>HTML</title>
+    </head>
+    <body>
+        <div class="header">
+            <ul id="menu" style="display: block">
+                <li>Home</li>
+                <li>About Us</li>
+                <li>Contact Us</li>
+            </ul>
+        </div>
+        <div class="content">
+        </div>
+        <div class="footer">
+        </div>
+
+        <button class="btn">Click me</button>
+
+        <script>
+            // .header > ul
+            var headers = document.getElementsByClassName("header");
+            for (var i = 0; i < headers.length; i++) {
+                var header = headers[i];
+                var childs = header.childNodes;
+                for (var j = 0; j < childs.length; j++) {
+                    if (childs[j].nodeName.toLowerCase() == 'ul') {
+                        console.log(childs[j]);
+                    }
+                }
+            }
+            // $(".header > ul") || jQuery(".header > ul")
+            console.log(document.querySelector(".header > ul"));
+            var newLi = document.createElement("li");
+            newLi.innerText = "Last menu element";
+            var parent = document.querySelector(".header > ul");
+            console.log(parent);
+            console.log(parent.childNodes[3]);
+            console.log(parent.childNodes[3].insertBefore);
+            //parent.childNodes[3].insertBefore(newLi, parent);
+            parent.insertBefore(newLi, parent.childNodes[3]);
+            
+            document.querySelector(".btn").addEventListener("click", () => {
+                if (parent.style.display == "block") {
+                    parent.style.display = "none";
+                } else {
+                    parent.style.display = "block";
+                }
+            });
+            /*
+            Добавить три кнопки, которые будут делать следующее:
+              а) первая - менять цвет body (с белого на желтый, и обратно)
+              б) вторая - добавлять в определенный div новый div с текстом "Hello world!"
+              в) третья - из масива с картинками брать случайную картинку и в div добавлять img с этой картинкой (массив картинок заранее предопределен) / Math.random            
+            */
+        </script>
+    </body>
+</html>
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help

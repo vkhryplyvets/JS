@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Lesson 7</title>
+	</head>
+	<body id="body">
+		<div class="header">
+	            <ul id="menu">
+	                <li>Home</li>
+	                <li>About Us</li>
+	                <li>Contact Us</li>
+	            </ul>
+	        </div>
+	        <div class="content">
+	        </div>
+	        <div class="footer">
+	        </div>
+
+        <button class="btn-color">Color</button>
+        <button class="btn-newDiv">New Div</button>
+        <button class="btn-addImg">Add img</button>
+		
+		<script>
+			/*var elem = document.getElementById("t");
+		    bodyBg.onclick = function () {
+		        if(this.style.backgroundColor)
+		          this.style.backgroundColor = "";
+		        else
+		           this.style.backgroundColor = "red";  
+		      }
+*/
+
+			// Меняем цвет Body
+
+			document.querySelector(".btn-color").addEventListener("click", () => {
+		                if (body.style.background == "rgb(255, 239, 59)") {
+		                    body.style.background = "rgb(255, 255, 255)";
+		                } else {
+		                    body.style.background = "rgb(255, 239, 59)";
+		                }
+		            });
+
+			// Добавляем новый div в определенный div
+
+			document.querySelector(".btn-newDiv").addEventListener("click", () => {
+				var newDiv = document.createElement("div")
+				newDiv.innerText = "Hello world!";
+				var parent = document.querySelector(".content");
+				parent.insertBefore(newDiv, parent.childNodes[0]);
+			});
+		
+		</script>
+	</body>
+</html>
